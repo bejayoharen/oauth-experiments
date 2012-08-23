@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<link rel="stylesheet" href="resources/style.css" type="text/css" media="screen"
+	charset="utf-8">
+<title>OAuth2 Authorization Server</title>
+</head>
+<body>
+	<div id="container">
+		<div id="header">
+			<h2>OAuth authorization page</h2>
+			<section id="intro">
+				<h2>Application requesting scope</h2>
+				<p>Client ClientId = ${clientId} CB = ${clientDescription} wants to get access to your information.</p>
+			</section>
+		</div>
+		<aside>
+		<form action="${target}" method="get">
+		<h4>The following private info is requested</h4>
+
+		<#list requestingScopes as r> <input type="checkbox" name="scope" value="${r}" checked />
+			<b>${r}</b><br/>
+		</#list> 
+		<#if grantedScopes?has_content>
+			<hr />
+			<h4>Previously approved scopes</h4>
+			<#list grantedScopes as g> <input type="checkbox" name="scope" value="${g}" checked />
+				<b>${g}</b><br/>
+			</#list>
+		</#if>
+		<br/>
+		<input type="submit" name="action" value="Reject"/>
+		<input type="submit" name="action" value="Accept" />
+		</form>
+		</aside>
+		<footer>
+			<p class="copyright">Copyright &copy; 2010 Ericsson Inc. All rights reserved.</p>
+		</footer>
+	</div>
+</body>
+</html>

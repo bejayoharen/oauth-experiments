@@ -1,0 +1,15 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>User Created</title>
+</head>
+<body>
+<#if action = "delete">
+User <b>${user}</b> was successfully deleted.
+<#else>
+User <b>${user}</b> was successfully created.
+You can now go on and set your <a href="/proxy/local">status</a>
+</#if>
+</body>
+</html>

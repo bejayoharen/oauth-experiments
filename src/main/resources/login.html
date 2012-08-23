@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    	<link rel="stylesheet" href="resources/style.css" type="text/css" media="screen" charset="utf-8">
+    	<title>Login</title>
+    	
+    	<script language="JavaScript">
+  			function submitForm(target){
+  	 			document.input.openid_identifier.value = target;
+  				document.input.submit(); 	
+  			}
+  		</script>
+  </head>
+  <body>
+  	<div id="container">
+		<div id="header">
+			<h2>OPenID authentication page</h2>
+			<section id="intro">
+				<h2>Login</h2>
+				<p>Provide your openID URL or XRI string or click on one of the pre-defined providers</p>
+			</section>
+    	</div>
+    	<aside>	
+    		<form name="input" action="openid_login" method="get">
+    			<!--<button type="button" onclick="submitForm('https://idm.labs.ericsson.net')">
+    				<img src="img/labsidm.png" alt="Ericsson Labs IDM" height="32" width="32"/>
+    			</button>-->
+    			<button type="button" onclick="submitForm('https://www.google.com/accounts/o8/id')">
+    				<img src="img/google.png" alt="Google" />
+    			</button>
+    			<button type="button" onclick="submitForm('http://me.yahoo.com')">
+    				<img src="img/yahoo.png" alt="Yahoo" />
+    			</button>
+    			<button type="button" onclick="submitForm('http://flickr.com')">
+    				<img src="img/flickr.png" alt="Flickr" />
+    			</button>
+    			<button type="button" onclick="submitForm('http://api.myspace.com/openid')">
+    				<img src="img/myspace.png" alt="Myspace" />
+    			</button>
+    			<button type="button" onclick="submitForm('https://www.myopenid.com/')">
+    				<img src="img/myopenid.jpg" alt="Test" height="32" width="32"/>
+    			</button>
+    			<br/>
+				<!-- img src="icons/openid.png" alt="OpenID :" / -->
+				<h4>Enter URL or XRI :</h4>
+				<input type="text" name="openid_identifier" style="vertical-align: text-bottom;" size="50"/>
+				<input type="image" src="img/openid.png" align="bottom" alt="Login with Provider" style="vertical-align: text-bottom;border:1px solid gray;"/>
+			</form>
+		</aside>
+		<footer>
+			<p class="copyright">Copyright &copy; 2010 Ericsson Inc. All rights reserved.</p>
+		</footer>
+	</div>
+  </body>
+</html> 

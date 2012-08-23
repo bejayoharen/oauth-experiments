@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Authorize OpenId Request</title>
+</head>
+<body>
+<p>${uname}, <b>${req}</b> has requested the following OpenId information from you.</p>
+<#if required??>
+<h3>Required Information</h3>
+<ul>
+<#list required as desc>
+<li>${desc}</li>
+</#list>
+</ul>
+</#if>
+<#if optional??>
+<h3>Required Information</h3>
+<ul>
+<#list optional as desc>
+<li>${desc}</li>
+</#list>
+</ul>
+</#if>
+<form action="" method="get">
+		<input type="hidden" name="oidsession" value="${oidsession}"/>
+		<table>
+			<tr>
+				<td><input type="submit" name="action" value="Accept" /></td>
+				<td><input type="submit" name="action" value="Reject" /></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
